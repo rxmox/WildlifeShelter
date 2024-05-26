@@ -1,6 +1,6 @@
-# ENSF 409 Final Project
+# WildLifeSHelter
 
-Contains The Final Project For ENSF 409  
+
 Application : Wildlife Rescue  
 Provides : Tasks based on the animals & GUI to allow user to create a schedule txt file  
 
@@ -12,10 +12,11 @@ Provides : Tasks based on the animals & GUI to allow user to create a schedule t
 
 ## Members
 
+* Omar Ahmed
 * Marcus Gee
 * Matteo Valente
 * Findlay Dunn-Wolbaum
-* Omar Ahmed
+
 
 ## Installation
 
