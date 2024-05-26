@@ -1,0 +1,113 @@
+Hour: 0
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+Loner                         Cage Cleaning                5 mins
+Biter                         Cage Cleaning                5 mins
+Bitter                        Cage Cleaning                5 mins
+Pencil                        Cage Cleaning                5 mins
+Eraser                        Cage Cleaning                5 mins
+Annie, Oliver and Mowgli      Cage Cleaning                5 mins
+
+Hour: 1
+Slinky                        Cage Cleaning                5 mins
+Spike                         Porcupine Cage Cleaning     10 mins
+Javelin                       Porcupine Cage Cleaning     10 mins
+Gatekeeper                    Porcupine Cage Cleaning     10 mins
+Sunshine                      Porcupine Cage Cleaning     10 mins
+Shadow                        Porcupine Cage Cleaning     10 mins
+Boots                         Cage Cleaning                5 mins
+
+Hour: 2
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+Spin                          Cage Cleaning                5 mins
+Spot                          Cage Cleaning                5 mins
+Slinky                        Feeding                      5 mins
+
+Hour: 3
+Empty
+
+Hour: 4
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+
+Hour: 5
+Empty
+
+Hour: 6
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+Spike                         Flush neck wound            25 mins
+Spike                         Administer antibiotics       5 mins
+
+Hour: 7
+Empty
+
+Hour: 8
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+
+Hour: 9
+Empty
+
+Hour: 10
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+
+Hour: 11
+Empty
+
+Hour: 12
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+
+Hour: 13
+Biter                         Inspect broken leg           5 mins
+Biter                         Eyedrops                    25 mins
+Bitter                        Give vitamin injection       5 mins
+Pencil                        Give vitamin injection       5 mins
+Eraser                        Give vitamin injection       5 mins
+Spin                          Inspect broken leg           5 mins
+
+Hour: 14
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+Spin                          Mange treatment             15 mins
+Spot                          Mange treatment             15 mins
+
+Hour: 15
+Shadow                        Apply burn ointment back    10 mins
+
+Hour: 16
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+
+Hour: 17
+Empty
+
+Hour: 18
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+Spike                         Administer antibiotics       5 mins
+
+Hour: 19
+Slinky                        Rebandage leg wound         20 mins
+Loner                         Feeding                      5 mins
+Biter                         Feeding                      5 mins
+Bitter                        Feeding                      5 mins
+Pencil                        Feeding                      5 mins
+Eraser                        Feeding                      5 mins
+Spike                         Feeding                      5 mins
+
+Hour: 20
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+Javelin                       Feeding                      5 mins
+Gatekeeper                    Feeding                      5 mins
+Sunshine                      Feeding                      5 mins
+Shadow                        Feeding                      5 mins
+Spin                          Feeding                      5 mins
+Spot                          Feeding                      5 mins
+
+Hour: 21
+Boots                         Feeding                      5 mins
+
+Hour: 22
+Annie, Oliver and Mowgli      Kit feeding                 30 mins
+Loner                         Eyedrops                    25 mins
+Javelin (+ Volunteer)         Eyedrops                    25 mins
+Boots                         Give fluid injection        10 mins
+
+Hour: 23
+Gatekeeper                    Give vitamin injection       5 mins
+Sunshine                      Mange treatment             15 mins
+

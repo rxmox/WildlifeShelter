@@ -1,0 +1,181 @@
+@startuml
+top to bottom direction
+
+package AnimalShelter {
+  class Animal {
+      -ID: int
+      -NICKNAME: String
+      -ANIMALSPECIES: String
+      -kitStatus: boolean = false
+      +Animal(ID: int, NICKNAME: String, ANIMALSPECIES: String) throws IllegalArgumentException
+      +getID(): int
+      +getNickName(): String
+      +getAnimalSpecies(): String
+      +getKitStatus(): boolean
+      +setKitStatus(): void
+      +feeding(): Item
+    }
+
+  class Beaver {
+      +Beaver(ID: int, NICKNAME: String, ANIMALSPECIES: String)
+      +feeding(): Item {override}
+    }
+
+  class Coyote {
+      +Coyote(ID: int, NICKNAME: String, ANIMALSPECIES: String)
+      +feeding(): Item {override}
+    }
+
+  class Fox {
+        +Fox(ID: int, NICKNAME: String, ANIMALSPECIES: String)
+        +feeding(): Item {override}
+      }
+
+  class Porcupine {
+        +Porcupine(ID: int, NICKNAME: String, ANIMALSPECIES: String)
+        +feeding(): Item {override}
+      }
+
+  class Raccoon {
+        +Raccoon(ID: int, NICKNAME: String, ANIMALSPECIES: String)
+        +feeding(): Item {override}
+      }
+
+  class Tasks {
+      -TASKID: int
+      -DESCRIPTION: String
+      -MAXWINDOW: int
+      -DURATION: int
+      +Tasks(TASKID: int, DESCRIPTION: String, DURATION: int, MAXWINDOW: int) throws IllegalArgumentException
+      +getTaskID(): int
+      +getDescription(): String
+      +getMaxWindow(): int
+      +getDuration(): int
+    }
+
+  class Treatment {
+    -TREATMENTID: int
+    -ANIMALID: int
+    -TASKID: int
+    -startHour: int
+    +Treatment(treatmentID: int, animalID: int, taskID: int, startHour: int) throws IllegalArgumentException
+    +getTreatmentID(): int
+    +getAnimalID(): int
+    +getTaskID(): int
+    +getStartHour(): int
+    +setStartHour(startHour: int): void throws IllegalArgumentException
+  }
+
+  class ImportData {
+      -dbConnection: Connection
+      -validTableNames: List<String>
+      +establishDBConnection(username: String, password: String): boolean
+      +importAnimalsTable(): HashMap<Integer, Animal> throws SQLException
+      +importTasksTable(): HashMap<Integer, Tasks> throws SQLException
+      +importTreatmentsTable(): ArrayList<Treatments> throws SQLException
+      +updateTreatmentStartHour(treatmentID: int, newStartHour: int): boolean
+      +validateTableName(tableName: String): void
+      +createAnimalBySpecies(id: int, nickName: String, species: String): Animal
+    }
+
+  class Item {
+      -animalID: int
+      -taskID: int
+      -startHour: int
+      -maxWindow: int
+      -duration: int
+      -treatmentID: int
+      -needsVolunteer: boolean = false
+      +Item(animalID: int, taskID: int, startHour: int, maxWindow: int, duration: int) throws IllegalArgumentException
+      +Item(animalID: int, taskID: int, startHour: int, maxWindow: int, duration: int, treatmentID: int) throws IllegalArgumentException
+      +setStartHour(startHour: int): void throws IllegalArgumentException
+      +setNeedsVolunteer(needsVolunteer: boolean): void
+      +getAnimalID(): int
+      +getTaskID(): int
+      +getStartHour(): int
+      +getMaxWindow(): int
+      +getDuration(): int
+      +getTreatmentID(): int
+      +getNeedsVolunteer(): boolean
+    }
+
+  class Schedule {
+      -importData: ImportData
+      -animalHashMap: HashMap<Integer, Animal>
+      -tasksHashMap: HashMap<Integer, Tasks>
+      -treatmentsArrayList: ArrayList<Treatments>
+      -schedule: HashMap<Integer, ArrayList<Item>>
+      -foodPrepFeeding: HashMap<Integer, HashMap<String, Boolean>>
+      -timeAvailability: HashMap<Integer, Integer>
+      -maxTimeAvailability: HashMap<Integer, Integer>
+      -scheduleString: String
+      +Schedule(username: String, password: String) throws IllegalArgumentException
+      +createSchedule(): void
+      +findHourForVolunteer(item: Item): int
+      +handleVolunteerRequired(volunteerHour: int, item: Item, options: String[]): void
+      +adjustTimeAvailability(hour: int): void
+      +promptReschedule(item: Item): void
+      +getTimeAvailabilityForRescheduling(): String
+      +addItem(item: Item): boolean
+      +adjustDurationForAnimalPrep(hour: int, animalID: int): int
+      +addMedical(): ArrayList<Item>
+      +addCage(): ArrayList<Item>
+      +addFeeding(): ArrayList<Item>
+      +formatItem(item: Item, nickNameWidth: int, descriptionWidth: int): String
+      +createTextSchedule(): void
+      +createGUIschedule(): void
+      +createScheduleString(): void
+    }
+
+  class GUI {
+      -username: String
+      -password: String
+      -instruction: String
+      -ERRORMESSAGE: final String = "An Error Occurred, Please Try Again"
+      -passLabel: JLabel
+      -userLabel: JLabel
+      +GUI()
+      +setGUIUsername(): void
+      +setGUIPassword(): void
+      +getUsername(): String
+      +getPassword(): String
+      +errorMessage(): void
+    }
+
+  class IllegalArgumentException {
+    }
+
+  class SQLException {
+      }
+
+  GUI "1" -down-> "1" Schedule : initiates
+  Schedule "1" -down-> "1" ImportData : uses
+  ImportData "1" -down-> "1..*" Animal : creates
+  ImportData "1" -down-> "1..*" Tasks : creates
+  ImportData "1" -down-> "1..*" Treatment : creates
+  Schedule "1" -down-> "1..*" Item : schedules
+  Item "1" -- "1..*" Animal : assigns
+  Item "1" -- "1..*" Tasks : executes
+  Item "1" -- "0..*" Treatment : schedules
+
+  Beaver -up-|> Animal : extends
+  Coyote -right|> Animal : extends
+  Fox -up-|> Animal : extends
+  Porcupine -up-|> Animal : extends
+  Raccoon -up-|> Animal : extends
+
+  Animal .down.> IllegalArgumentException : <<throws>>
+  Tasks .down.> IllegalArgumentException : <<throws>>
+  Treatment .right.> IllegalArgumentException : <<throws>>
+  ImportData .left.> SQLException : <<throws>>
+  Item .right.> IllegalArgumentException : <<throws>>
+  Schedule ..> IllegalArgumentException : <<throws>>
+
+'  Included to aid with formatting for readability
+  ImportData -[hidden]-> Animal : creates
+  ImportData -[hidden]-> Tasks : creates
+  ImportData -[hidden]-> Treatment : creates
+
+}
+
+@enduml
