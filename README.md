@@ -1,4 +1,4 @@
-# WildLifeSHelter
+# WildLifeShelter
 
 
 Application : Wildlife Rescue  
